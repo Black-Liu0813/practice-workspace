@@ -1,0 +1,20 @@
+# CODEOWNERS — 代码所有权与自动 review 分配
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# CLI wrappers (API 调用层)
+/bin/ @Black-Liu0813
+
+# AO agent 插件 (Agent interface 实现)
+/plugins/ @Black-Liu0813
+
+# CI/CD 配置
+/.github/ @Black-Liu0813
+
+# AO 编排配置
+/agent-orchestrator.yaml @Black-Liu0813
+
+# 环境变量模板
+/.env.example @Black-Liu0813
+
+# 默认：所有未匹配的文件
+* @Black-Liu0813
