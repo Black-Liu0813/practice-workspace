@@ -21,7 +21,11 @@ jobs:
         with:
           node-version: 22
 
-      - run: pnpm install
+      - name: Install dependencies
+        run: pnpm install
 
-      - run: pnpm lint
-      - run: pnpm build
+      - name: Run lint
+        run: pnpm lint
+      
+      - name: Run build
+        run: pnpm build
