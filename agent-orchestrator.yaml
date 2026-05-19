@@ -1,0 +1,32 @@
+$schema: https://raw.githubusercontent.com/ComposioHQ/agent-orchestrator/main/schema/config.schema.json
+
+port: 3000
+
+defaults:
+  runtime: tmux
+  agent: deepseek
+  workspace: worktree
+  notifiers:
+    - desktop
+
+plugins:
+  - name: deepseek
+    source: local
+    path: ./plugins/agent-deepseek
+    enabled: true
+  - name: qwen
+    source: local
+    path: ./plugins/agent-qwen
+    enabled: true
+  - name: glm
+    source: local
+    path: ./plugins/agent-glm
+    enabled: true
+
+projects:
+  practice-workspace:
+    path: /Users/cyber/Work/Projects/github/practice-workspace
+    defaultBranch: main
+    sessionPrefix: pw
+    agentConfig:
+      permissions: permissionless

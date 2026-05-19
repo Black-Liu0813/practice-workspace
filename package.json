@@ -5,16 +5,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint .",
-    "dev": "vite",
-    "build": "vite build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "for dir in plugins/*/; do echo \"Building $dir\"; npx tsc --project \"${dir}tsconfig.json\" || exit 1; done",
+    "test:api": "node bin/deepseek-chat --prompt 'hello' && node bin/qwen-chat --prompt 'hello' && node bin/glm-chat --prompt 'hello'",
+    "clean": "for dir in plugins/*/; do rm -rf \"${dir}dist\"; done"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.26.2",
-  "dependencies": {
-    "@composio/agent-orchestrator": "^0.1.0"
+  "devDependencies": {
+    "typescript": "^5.9.3"
   }
 }
