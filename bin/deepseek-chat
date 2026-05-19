@@ -29,7 +29,7 @@ if (!API_KEY) {
 
 const args = process.argv.slice(2);
 let prompt = "";
-let model = "deepseek-chat";
+let model = "deepseek-v4-flash";
 
 for (let i = 0; i < args.length; i++) {
   if (args[i] === "--prompt" && args[i + 1]) {
